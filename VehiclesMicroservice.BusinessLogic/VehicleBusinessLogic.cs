@@ -80,7 +80,7 @@ public class VehicleBusinessLogic:IVehicleBusinessLogic
     public async Task ChangeUserToVehicle(ChangeUserDto dto, string? token)
     {
         await vehicleRepository.ChangeUserToVehicle(new Guid(dto.UserId),new Guid(dto.VehicleId));
-        await loggerService.LogInfo($"Vehicle with id: {dto.VehicleId} was added", token);
+        await loggerService.LogInfo($"Vehicle with id: {dto.VehicleId} changed owner to user with id: {dto.UserId}", token);
     }
 
     public async Task AddErrorsToVehicle(AddErrorsToVehicleDto dto,string? token)
@@ -89,7 +89,7 @@ public class VehicleBusinessLogic:IVehicleBusinessLogic
 
         await vehicleRepository.AddErrorsToVehicle(dto.ErrorsList,new Guid(dto.VehicleId));
         
-        await loggerService.LogInfo($"Vehicle with id: {dto.VehicleId} was added", token);
+        await loggerService.LogInfo($"Errors for vehicle with id: {dto.VehicleId} were added", token);
     }
 
     public async Task RemoveVehicle(RemoveVehicleDto dto,string? token)
@@ -98,6 +98,6 @@ public class VehicleBusinessLogic:IVehicleBusinessLogic
 
         await vehicleRepository.RemoveVehicle(new Guid(dto.VehicleId));
         
-        await loggerService.LogInfo($"Vehicle with id: {dto.VehicleId} was added", token);
+        await loggerService.LogInfo($"Vehicle with id: {dto.VehicleId} was removed", token);
     }
 }

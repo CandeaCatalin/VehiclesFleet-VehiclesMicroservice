@@ -8,7 +8,7 @@ namespace VehiclesMicroservice.Controllers;
 
 [ApiController]
 [Route("vehicleManagement")]
-// [Authorize]
+[Authorize]
 public class VehicleController: ControllerBase
 {
     private readonly IVehicleBusinessLogic vehicleBusinessLogic;
