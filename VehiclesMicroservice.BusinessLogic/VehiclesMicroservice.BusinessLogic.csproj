@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\VehiclesMicroservice.Repository\VehiclesMicroservice.Repository.csproj" />
+      <ProjectReference Include="..\VehiclesMicroservice.Services\VehiclesMicroservice.Services.csproj" />
+    </ItemGroup>
+
+</Project>

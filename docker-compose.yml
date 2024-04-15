@@ -1,0 +1,36 @@
+﻿# CREATE NETWORK BEFORE RUNNING DOCKER COMPOSE 
+#docker network create "vehiclesfleet-vehicles-net"
+version: '3.8'
+
+services:
+  vehiclesmicroservice:
+    image: vehiclesmicroservice
+    build:
+      context: .
+      dockerfile: VehiclesMicroservice/Dockerfile
+    ports:
+      - "3002:80"
+    depends_on:
+      - database
+    networks:
+      vehiclesfleet-logger-net:
+        aliases:
+          - vehicles
+
+  database:
+    image: "mcr.microsoft.com/mssql/server"
+    environment:
+      SA_PASSWORD: mHDyhpoc4336HXuF0GYO
+      ACCEPT_EULA: Y
+      MSSQL_PID: Express
+      MSSQL_TCP_PORT: 1436
+      MSSQL_DATABASE: VehiclesFleet
+      MSSQL_PASSWORD: mHDyhpoc4336HXuF0GYO
+    ports:
+      - "1436:1436"
+    networks:
+      vehiclesfleet-logger-net:
+
+networks:
+  vehiclesfleet-logger-net:
+    external: true
