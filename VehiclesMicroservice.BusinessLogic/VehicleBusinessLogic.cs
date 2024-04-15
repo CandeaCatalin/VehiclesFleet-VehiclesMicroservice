@@ -1,9 +1,10 @@
+using VehiclesMicroservice.BusinessLogic.Contracts;
 using VehiclesMicroservice.Domain.Dtos;
 using VehiclesMicroservice.Domain.Models;
 using VehiclesMicroservice.Repository.Contracts;
 using VehiclesMicroservice.Services.Contracts;
 
-namespace VehiclesMicroservice.BusinessLogic.Contracts;
+namespace VehiclesMicroservice.BusinessLogic;
 
 public class VehicleBusinessLogic:IVehicleBusinessLogic
 {

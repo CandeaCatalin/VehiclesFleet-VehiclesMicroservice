@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.Net.Http.Headers;
 using Microsoft.OpenApi.Models;
+using VehiclesMicroservice.BusinessLogic;
 using VehiclesMicroservice.BusinessLogic.Contracts;
 using VehiclesMicroservice.DataAccess;
 using VehiclesMicroservice.Repository;
